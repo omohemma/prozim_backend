@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "listings",
+  "info": {
+    "name": "listing"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "zip": {
+      "type": "integer"
+    },
+    "address": {
+      "type": "text"
+    },
+    "categories": {
+      "collection": "category",
+      "via": "listings",
+      "dominant": true
+    },
+    "reviews": {
+      "via": "listing",
+      "collection": "review"
+    }
+  }
+}

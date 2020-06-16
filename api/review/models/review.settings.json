@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "name": "review"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    },
+    "service": {
+      "type": "integer",
+      "max": 10,
+      "min": 0
+    },
+    "response_time": {
+      "type": "integer",
+      "max": 10,
+      "min": 0
+    },
+    "communication": {
+      "type": "integer",
+      "max": 10,
+      "min": 0
+    },
+    "price": {
+      "type": "integer",
+      "max": 10,
+      "min": 0
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": ["images", "files", "videos"],
+      "plugin": "upload",
+      "required": false
+    },
+    "listing": {
+      "model": "listing",
+      "via": "reviews"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "reviews"
+    }
+  }
+}

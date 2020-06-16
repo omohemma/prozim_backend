@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_timing_availabilities",
+  "info": {
+    "name": "opening",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "opening_hour": {
+      "type": "time"
+    },
+    "closing_hour": {
+      "type": "time"
+    },
+    "day": {
+      "type": "string"
+    }
+  }
+}

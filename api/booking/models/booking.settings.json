@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "name": "booking"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Appointment",
+        "VideoCall"
+      ]
+    },
+    "is_accepted": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "accepted",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "bookings"
+    }
+  }
+}
